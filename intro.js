@@ -25,3 +25,14 @@ while (ctr < listItems.length) {
     ctr++;
 }
 
+var fib = function(i) {
+  var a = 0; var b = 0; var temp;
+
+  for(; i >= 0; i--) {
+    temp = a + b;
+    a = a + b;
+    b = temp;
+  }
+
+  return temp;
+}
