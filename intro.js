@@ -3,6 +3,9 @@ function buttonAction() {
     var li = document.createElement("li");
     li.innerHTML = "item " + list.length;
     document.getElementById("thelist").appendChild(li);
+
+    li.addEventListener("mouseover", changeTitle);
+    li.addEventListener("mouseout", changeTitleBack);
 }
 
 function changeTitle() {
@@ -13,12 +16,16 @@ function changeTitleBack() {
     document.getElementById("h").innerHTML = "Hello World!";
 }
 
-button = document.getElementById('b');
-button.addEventListener("click", buttonAction);
+function updateListlength() {
+  return document.getElementById("thelist").children.length;
+}
 
-var listItems = document.getElementsByTagName("li");
+button1 = document.getElementById('b');
+button1.addEventListener("click", buttonAction);
+
 var ctr = 0;
-while (ctr < listItems.length) {
+var list = document.getElementById("thelist").children;
+while (ctr < list.length) {
     listItems[ctr].addEventListener("mouseover", changeTitle);
     listItems[ctr].addEventListener("mouseout", changeTitleBack);
     ctr++;
@@ -35,3 +42,7 @@ var fib = function(i) {
 
   return temp;
 }
+
+var list = document.getElementById("ol-ibonacci").children;
+button2 = document.getElementById('b-ibonacci');
+button2.addEventListener("click", fib(list.length));
