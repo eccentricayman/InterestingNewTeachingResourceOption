@@ -1,8 +1,7 @@
 function buttonAction() {
     var list = document.getElementById("thelist").children;
     var li = document.createElement("li");
-    var item = document.createTextNode("item " + list.length);
-    li.appendChild(item);
+    li.innerHTML = "item " + list.length;
     document.getElementById("thelist").appendChild(li);
 }
 
@@ -26,7 +25,7 @@ while (ctr < listItems.length) {
 }
 
 var fib = function(i) {
-  var a = 0; var b = 0; var temp;
+  var a = 1; var b = 0; var temp;
 
   for(; i >= 0; i--) {
     temp = a + b;
